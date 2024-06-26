@@ -1,0 +1,558 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "47c5c994-7046-49b6-a896-fce737afc805",
+      "@type": "WorkflowCollection",
+      "name": "Sample - Progress WhatsUp Gold - 1.0.0",
+      "description": "WhatsUp Gold provides complete visibility into the status and performance of applications, network devices and servers in the cloud or on-premises.",
+      "visible": true,
+      "image": null,
+      "recordTags": [
+        "Progress",
+        "progress-whatsup-gold"
+      ],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "b555cafa-34dc-41c0-b7d8-3811b13bc3ea",
+          "collection": "/api/3/workflow_collections/47c5c994-7046-49b6-a896-fce737afc805",
+          "triggerLimit": null,
+          "description": "Retrieves a list of all attributes for device from WhatsUp Gold based on the device ID you have specified.",
+          "name": "Get Device Attributes",
+          "tag": "#Progress WhatsUp Gold",
+          "recordTags": [
+            "Progress",
+            "progress-whatsup-gold"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/beca4fae-61ff-431e-9a77-baeebb0b1e7c",
+          "steps": [
+            {
+              "uuid": "beca4fae-61ff-431e-9a77-baeebb0b1e7c",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "af8dbd92-f90a-4ca2-8d9c-7965594b8f43",
+                "title": "Progress WhatsUp Gold: Get Device Attributes",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "eae4890c-89aa-43d4-b7d8-ab8b939e8853",
+              "@type": "WorkflowStep",
+              "name": "Get Device Attributes",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Progress WhatsUp Gold",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "progress-whatsup-gold",
+                "operation": "get_device_attributes",
+                "operationTitle": "Get Device Attributes"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "8140ed13-2600-457c-991b-181edb37d9e9",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Device Attributes",
+              "sourceStep": "/api/3/workflow_steps/beca4fae-61ff-431e-9a77-baeebb0b1e7c",
+              "targetStep": "/api/3/workflow_steps/eae4890c-89aa-43d4-b7d8-ab8b939e8853"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "3b64a409-d819-4e96-b257-d971a5071eec",
+          "collection": "/api/3/workflow_collections/47c5c994-7046-49b6-a896-fce737afc805",
+          "triggerLimit": null,
+          "description": "Retrieves a list of all device group assignments for a device from WhatsUp Gold based on the device ID you have specified.",
+          "name": "Get Device Groups",
+          "tag": "#Progress WhatsUp Gold",
+          "recordTags": [
+            "Progress",
+            "progress-whatsup-gold"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/9b92f98b-9b1c-4336-862c-75abf3ee6474",
+          "steps": [
+            {
+              "uuid": "9b92f98b-9b1c-4336-862c-75abf3ee6474",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "6b9c6202-44ce-440e-a313-28778bf2de68",
+                "title": "Progress WhatsUp Gold: Get Device Groups",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "ec2ab669-bc7e-4967-8d16-ac886e3ad373",
+              "@type": "WorkflowStep",
+              "name": "Get Device Groups",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Progress WhatsUp Gold",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "progress-whatsup-gold",
+                "operation": "get_device_groups",
+                "operationTitle": "Get Device Groups"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "9b4ffa4c-4b25-41cf-b20a-72a4f333164f",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Device Groups",
+              "sourceStep": "/api/3/workflow_steps/9b92f98b-9b1c-4336-862c-75abf3ee6474",
+              "targetStep": "/api/3/workflow_steps/ec2ab669-bc7e-4967-8d16-ac886e3ad373"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "55f1714f-843d-47eb-80ce-58f3b7a9ed90",
+          "collection": "/api/3/workflow_collections/47c5c994-7046-49b6-a896-fce737afc805",
+          "triggerLimit": null,
+          "description": "Retrieves a list of all assigned monitors for a device from WhatsUp Gold based on the device ID you have specified.",
+          "name": "Get Device Monitors",
+          "tag": "#Progress WhatsUp Gold",
+          "recordTags": [
+            "Progress",
+            "progress-whatsup-gold"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/28ff3774-b6f1-44dc-9b9c-5ffe090e78b4",
+          "steps": [
+            {
+              "uuid": "28ff3774-b6f1-44dc-9b9c-5ffe090e78b4",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "48edc128-32d9-4742-ac59-566087e42fd1",
+                "title": "Progress WhatsUp Gold: Get Device Monitors",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "fa0c6dd7-46ae-444a-94b3-0ad2675deb72",
+              "@type": "WorkflowStep",
+              "name": "Get Device Monitors",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Progress WhatsUp Gold",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "progress-whatsup-gold",
+                "operation": "get_device_monitors",
+                "operationTitle": "Get Device Monitors"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "157940c1-01aa-44cd-99a4-0966bd5230cc",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Device Monitors",
+              "sourceStep": "/api/3/workflow_steps/28ff3774-b6f1-44dc-9b9c-5ffe090e78b4",
+              "targetStep": "/api/3/workflow_steps/fa0c6dd7-46ae-444a-94b3-0ad2675deb72"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "b605600b-d5d1-417a-b949-b2a544d05309",
+          "collection": "/api/3/workflow_collections/47c5c994-7046-49b6-a896-fce737afc805",
+          "triggerLimit": null,
+          "description": "Retrieves the device general polling configuration summary from WhatsUp Gold based on the device ID you have specified.",
+          "name": "Get Device Polling Configuration",
+          "tag": "#Progress WhatsUp Gold",
+          "recordTags": [
+            "Progress",
+            "progress-whatsup-gold"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/8e16e121-9f76-4c9f-9a9e-5daf29c38540",
+          "steps": [
+            {
+              "uuid": "8e16e121-9f76-4c9f-9a9e-5daf29c38540",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "8ed89176-d9a9-4afd-9a66-1b14b4223bcd",
+                "title": "Progress WhatsUp Gold: Get Device Polling Configuration",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "3092583f-3e13-4bbb-9090-6665b4f08d2e",
+              "@type": "WorkflowStep",
+              "name": "Get Device Polling Configuration",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Progress WhatsUp Gold",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "progress-whatsup-gold",
+                "operation": "get_device_polling_configuration",
+                "operationTitle": "Get Device Polling Configuration"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "d17e673c-83c2-4f58-a775-83c4d609aea0",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Device Polling Configuration",
+              "sourceStep": "/api/3/workflow_steps/8e16e121-9f76-4c9f-9a9e-5daf29c38540",
+              "targetStep": "/api/3/workflow_steps/3092583f-3e13-4bbb-9090-6665b4f08d2e"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "e9d1f064-0962-4826-bda7-66f6779ce516",
+          "collection": "/api/3/workflow_collections/47c5c994-7046-49b6-a896-fce737afc805",
+          "triggerLimit": null,
+          "description": "Retrieves the summary of the device's configuration settings including references to credentials, monitors, groups, etc. from WhatsUp Gold based on the device ID you have specified.",
+          "name": "Get Device Summary",
+          "tag": "#Progress WhatsUp Gold",
+          "recordTags": [
+            "Progress",
+            "progress-whatsup-gold"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/f8723af1-2bfc-433c-b7c4-f63a3b464251",
+          "steps": [
+            {
+              "uuid": "f8723af1-2bfc-433c-b7c4-f63a3b464251",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "c499e3ef-5ce3-4fb7-9f66-819ed5083cd5",
+                "title": "Progress WhatsUp Gold: Get Device Summary",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "e5451a17-17ff-42a5-ae03-aa4849de18da",
+              "@type": "WorkflowStep",
+              "name": "Get Device Summary",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Progress WhatsUp Gold",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "progress-whatsup-gold",
+                "operation": "get_device_summary",
+                "operationTitle": "Get Device Summary"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "36c94a2a-f172-40ca-b28b-f5a5bd179460",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Device Summary",
+              "sourceStep": "/api/3/workflow_steps/f8723af1-2bfc-433c-b7c4-f63a3b464251",
+              "targetStep": "/api/3/workflow_steps/e5451a17-17ff-42a5-ae03-aa4849de18da"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "ca682694-3273-44d3-ba54-7de3004abe3e",
+          "collection": "/api/3/workflow_collections/47c5c994-7046-49b6-a896-fce737afc805",
+          "triggerLimit": null,
+          "description": "Retrieves the device overview from WhatsUp Gold based on the device ID you have specified.",
+          "name": "Get Device Overview",
+          "tag": "#Progress WhatsUp Gold",
+          "recordTags": [
+            "Progress",
+            "progress-whatsup-gold"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/a4276b69-0c2d-484b-b016-da0f60ffb921",
+          "steps": [
+            {
+              "uuid": "a4276b69-0c2d-484b-b016-da0f60ffb921",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "bba03261-381a-4aa4-8dc4-fbf2d5f38eab",
+                "title": "Progress WhatsUp Gold: Get Device Overview",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "63379482-9357-4f34-a3dc-80355a2a2d90",
+              "@type": "WorkflowStep",
+              "name": "Get Device Overview",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Progress WhatsUp Gold",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "progress-whatsup-gold",
+                "operation": "get_device_overview",
+                "operationTitle": "Get Device Overview"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "17c45667-f5de-430a-8171-813d88cba5ec",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Device Overview",
+              "sourceStep": "/api/3/workflow_steps/a4276b69-0c2d-484b-b016-da0f60ffb921",
+              "targetStep": "/api/3/workflow_steps/63379482-9357-4f34-a3dc-80355a2a2d90"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "f2469a9b-42ba-45bf-b36a-f4df02566e85",
+          "collection": "/api/3/workflow_collections/47c5c994-7046-49b6-a896-fce737afc805",
+          "triggerLimit": null,
+          "description": "Retrieves the report for a device from WhatsUp Gold based on the report type and device ID you have specified.",
+          "name": "Get Device Report",
+          "tag": "#Progress WhatsUp Gold",
+          "recordTags": [
+            "Progress",
+            "progress-whatsup-gold"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/8446dfe9-bb1a-4db6-b128-f08d8b4919c4",
+          "steps": [
+            {
+              "uuid": "8446dfe9-bb1a-4db6-b128-f08d8b4919c4",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "28c7f11b-36a7-4531-9c18-7ad1383710d9",
+                "title": "Progress WhatsUp Gold: Get Device Report",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "39764cdc-77c8-41ae-bfd9-aa0fe21916ae",
+              "@type": "WorkflowStep",
+              "name": "Get Device Report",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Progress WhatsUp Gold",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "progress-whatsup-gold",
+                "operation": "get_device_report",
+                "operationTitle": "Get Device Report"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "6105bf51-bbb0-4c5c-875e-871fd6d70f13",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Device Report",
+              "sourceStep": "/api/3/workflow_steps/8446dfe9-bb1a-4db6-b128-f08d8b4919c4",
+              "targetStep": "/api/3/workflow_steps/39764cdc-77c8-41ae-bfd9-aa0fe21916ae"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
