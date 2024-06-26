@@ -1,0 +1,783 @@
+{
+  "name": "progress-whatsup-gold",
+  "label": "Progress WhatsUp Gold",
+  "description": "WhatsUp Gold provides complete visibility into the status and performance of applications, network devices and servers in the cloud or on-premises.",
+  "publisher": "Fortinet",
+  "cs_approved": true,
+  "cs_compatible": true,
+  "version": "1.0.0",
+  "category": "Network Security",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "help_online": "",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "resource",
+        "placeholder": "https://<your-WhatsUp-Gold-server-host>:9644",
+        "tooltip": "The service-based URI to connect and perform automated operations. ",
+        "description": "The service-based URI to connect and perform automated operations. "
+      },
+      {
+        "title": "Username",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "username",
+        "tooltip": "Username to access the WhatsUp Gold server to which you will connect and perform automated operations.",
+        "description": "Username to access the WhatsUp Gold server to which you will connect and perform automated operations."
+      },
+      {
+        "title": "Password",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "password",
+        "name": "password",
+        "tooltip": "Password to access the WhatsUp Gold server to which you will connect and perform automated operations.",
+        "description": "Password to access the WhatsUp Gold server to which you will connect and perform automated operations."
+      },
+      {
+        "title": "Verify SSL",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "type": "checkbox",
+        "name": "verify_ssl",
+        "value": true,
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not.\nBy default, this option is set as True."
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "get_device_attributes",
+      "title": "Get Device Attributes",
+      "description": "Retrieves a list of all attributes for device from WhatsUp Gold based on the device ID you have specified.",
+      "category": "investigation",
+      "annotation": "get_device_attributes",
+      "output_schema": {
+          "paging": {
+              "pageId": "",
+              "size": ""
+          },
+          "data": [
+              {
+                  "attributeId": "",
+                  "name": "",
+                  "value": "",
+                  "id": ""
+              }
+          ]
+      },
+      "parameters": [
+        {
+          "title": "Device ID",
+          "name": "device_id",
+          "type": "integer",
+          "tooltip": "Specify a device ID to retrieve its attributes from the WhatsUp Gold server.",
+          "description": "Specify a device ID to retrieve its attributes from the WhatsUp Gold server.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Attribute Names",
+          "name": "names",
+          "type": "text",
+          "tooltip": "Specify the comma-separated list of attribute names to return. If empty, all attributes will be returned.",
+          "description": "Specify the comma-separated list of attribute names to return. If empty, all attributes will be returned.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Limit",
+          "name": "limit",
+          "type": "integer",
+          "tooltip": "The number of result to retrieve.",
+          "description": "Specify the maximum number of records that this operation should return.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Page ID",
+          "name": "pageId",
+          "type": "integer",
+          "tooltip": "Used to get the next set of results. If nextPageId is returned in the previous response, you use the returned nextPageId value to get the next set of records.",
+          "description": "Specify page ID to get the next set of results. If nextPageId is returned in the previous response, you use the returned nextPageId value to get the next set of records.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "get_device_groups",
+      "title": "Get Device Groups",
+      "description": "Retrieves a list of all device group assignments for a device from WhatsUp Gold based on the device ID you have specified.",
+      "category": "investigation",
+      "annotation": "get_device_groups",
+      "output_schema": {
+          "paging": {
+              "pageId": "",
+              "size": ""
+          },
+          "data": [
+              {
+                  "parentGroupId": "",
+                  "details": {
+                      "groupType": "",
+                      "monitorState": "",
+                      "childrenCount": "",
+                      "deviceChildrenCount": "",
+                      "deviceDescendantCount": ""
+                  },
+                  "name": "",
+                  "description": "",
+                  "id": ""
+              }
+          ]
+      },
+      "parameters": [
+        {
+          "title": "Device ID",
+          "name": "device_id",
+          "type": "integer",
+          "tooltip": "Specify a device ID to retrieve its device group assignments from the WhatsUp Gold server.",
+          "description": "Specify a device ID to retrieve its device group assignments from the WhatsUp Gold server.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "View",
+          "name": "view",
+          "type": "select",
+          "options": [
+            "ID",
+            "Summary",
+            "Detail"
+          ],
+          "tooltip": "Specify to return a detailed or summarised response. Valid values: \"ID\" \"Summary\"(default) \"Detail\" ",
+          "description": "Specify to return a detailed or summarised response. Valid values: \"ID\" \"Summary\"(default) \"Detail\" ",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Limit",
+          "name": "limit",
+          "type": "integer",
+          "tooltip": "The number of result to retrieve.",
+          "description": "Specify the maximum number of records that this operation should return.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Page ID",
+          "name": "pageId",
+          "type": "integer",
+          "tooltip": "Used to get the next set of results. If nextPageId is returned in the previous response, you use the returned nextPageId value to get the next set of records.",
+          "description": "Specify page ID to get the next set of results. If nextPageId is returned in the previous response, you use the returned nextPageId value to get the next set of records.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "get_device_monitors",
+      "title": "Get Device Monitors",
+      "description": "Retrieves a list of all assigned monitors for a device from WhatsUp Gold based on the device ID you have specified.",
+      "category": "investigation",
+      "annotation": "get_device_monitors",
+      "output_schema": {
+          "paging": {
+              "pageId": "",
+              "size": ""
+          },
+          "data": [
+              {
+                  "id": "",
+                  "description": "",
+                  "type": "",
+                  "monitorTypeId": "",
+                  "monitorTypeClassId": "",
+                  "monitorTypeName": "",
+                  "isGlobal": ""
+              }
+          ]
+      },
+      "parameters": [
+        {
+          "title": "Device ID",
+          "name": "device_id",
+          "type": "integer",
+          "tooltip": "Specify a device ID to retrieve its assigned monitors from the WhatsUp Gold server.",
+          "description": "Specify a device ID to retrieve its assigned monitors from the WhatsUp Gold server.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Limit",
+          "name": "limit",
+          "type": "integer",
+          "tooltip": "The number of result to retrieve.",
+          "description": "Specify the maximum number of records that this operation should return.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Page ID",
+          "name": "pageId",
+          "type": "integer",
+          "tooltip": "Used to get the next set of results. If nextPageId is returned in the previous response, you use the returned nextPageId value to get the next set of records.",
+          "description": "Specify page ID to get the next set of results. If nextPageId is returned in the previous response, you use the returned nextPageId value to get the next set of records.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "get_device_polling_configuration",
+      "title": "Get Device Polling Configuration",
+      "description": "Retrieves the device general polling configuration summary from WhatsUp Gold based on the device ID you have specified.",
+      "category": "investigation",
+      "annotation": "get_device_polling_configuration",
+      "output_schema": {
+          "data": {
+              "pollingIntervalSeconds": "",
+              "pollByHostName": "",
+              "maintenance": {
+                  "enabled": "",
+                  "manual": {
+                      "enabled": ""
+                  }
+              }
+          }
+      },
+      "parameters": [
+        {
+          "title": "Device ID",
+          "name": "device_id",
+          "type": "integer",
+          "tooltip": "Specify a device ID to retrieve its general polling configuration from the WhatsUp Gold server.",
+          "description": "Specify a device ID to retrieve its general polling configuration from the WhatsUp Gold server.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "get_device_summary",
+      "title": "Get Device Summary",
+      "description": "Retrieves the summary of the device's configuration settings including references to credentials, monitors, groups, etc. from WhatsUp Gold based on the device ID you have specified.",
+      "category": "investigation",
+      "annotation": "get_device_summary",
+      "output_schema": {
+          "data": {
+              "deviceCount": "",
+              "errors": [],
+              "templates": [
+                  {
+                      "templateId": "",
+                      "displayName": "",
+                      "deviceType": "",
+                      "snmpOid": "",
+                      "pollInterval": "",
+                      "primaryRole": "",
+                      "subRoles": [],
+                      "os": "",
+                      "brand": "",
+                      "actionPolicy": "",
+                      "note": "",
+                      "autoRefresh": "",
+                      "credentials": [],
+                      "interfaces": [
+                          {
+                              "defaultInterface": "",
+                              "pollUsingNetworkName": "",
+                              "networkAddress": "",
+                              "networkName": ""
+                          }
+                      ],
+                      "attributes": [
+                          {
+                              "name": "",
+                              "value": ""
+                          }
+                      ],
+                      "customLinks": [
+                          {
+                              "name": "",
+                              "value": ""
+                          }
+                      ],
+                      "activeMonitors": [
+                          {
+                              "classId": "",
+                              "name": "",
+                              "argument": "",
+                              "comment": ""
+                          }
+                      ],
+                      "performanceMonitors": [],
+                      "passiveMonitors": [],
+                      "dependencies": [],
+                      "applicationProfiles": [],
+                      "layer2Data": "",
+                      "groups": [
+                          {
+                              "parents": [],
+                              "name": ""
+                          }
+                      ]
+                  }
+              ]
+          }
+      },
+      "parameters": [
+        {
+          "title": "Device ID",
+          "name": "device_id",
+          "type": "integer",
+          "tooltip": "Specify a device ID to retrieve its summary from the WhatsUp Gold server.",
+          "description": "Specify a device ID to retrieve its summary from the WhatsUp Gold server.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "get_device_overview",
+      "title": "Get Device Overview",
+      "description": "Retrieves the device overview from WhatsUp Gold based on the device ID you have specified.",
+      "category": "investigation",
+      "annotation": "get_device_overview",
+      "output_schema": {
+          "data": {
+              "downActiveMonitors": [],
+              "totalActiveMonitors": "",
+              "totalActiveMonitorsDown": "",
+              "notes": "",
+              "hostName": "",
+              "networkAddress": "",
+              "role": "",
+              "brand": "",
+              "os": "",
+              "bestState": "",
+              "worstState": "",
+              "name": "",
+              "description": "",
+              "id": ""
+          }
+      },
+      "parameters": [
+        {
+          "title": "Device ID",
+          "name": "device_id",
+          "type": "integer",
+          "tooltip": "Specify a device ID to retrieve device overview from the WhatsUp Gold server.",
+          "description": "Specify a device ID to retrieve device overview from the WhatsUp Gold server.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "get_device_report",
+      "title": "Get Device Report",
+      "description": "Retrieves the report for a device from WhatsUp Gold based on the report type and device ID you have specified.",
+      "category": "investigation",
+      "annotation": "get_device_report",
+      "conditional_output_schema": [
+        {
+          "condition": "{{report_type === 'CPU Utilization Report'}}",
+          "output_schema": {
+              "paging": {
+                  "pageId": "",
+                  "nextPageId": "",
+                  "size": ""
+              },
+              "data": [
+                  {
+                      "deviceName": "",
+                      "cpu": "",
+                      "cpuId": "",
+                      "pollTimeUtc": "",
+                      "timeFromLastPollSeconds": "",
+                      "minPercent": "",
+                      "maxPercent": "",
+                      "avgPercent": "",
+                      "series": [
+                          {
+                              "pollTimeUtc": "",
+                              "avgPercent": "",
+                              "maxPercent": "",
+                              "minPercent": ""
+                          }
+                      ],
+                      "id": ""
+                  }
+              ]
+          }
+        },
+        {
+          "condition": "{{report_type === 'Disk Utilization Report'}}",
+          "output_schema": {
+              "paging": {
+                  "pageId": "",
+                  "nextPageId": "",
+                  "size": ""
+              },
+              "data": [
+                  {
+                      "minUsed": "",
+                      "maxUsed": "",
+                      "avgUsed": "",
+                      "avgFree": "",
+                      "minPercent": "",
+                      "maxPercent": "",
+                      "avgPercent": "",
+                      "series": [
+                          {
+                              "pollTimeUtc": "",
+                              "avgPercent": "",
+                              "minPercent": "",
+                              "maxPercent": ""
+                          }
+                      ],
+                      "deviceName": "",
+                      "disk": "",
+                      "diskId": "",
+                      "pollTimeUtc": "",
+                      "timeFromLastPollSeconds": "",
+                      "size": "",
+                      "id": ""
+                  }
+              ]
+          }
+        },
+        {
+          "condition": "{{report_type === 'Memory Utilization Report'}}",
+          "output_schema": {
+              "paging": {
+                  "pageId": "",
+                  "nextPageId": "",
+                  "size": ""
+              },
+              "data": [
+                  {
+                      "deviceName": "",
+                      "memory": "",
+                      "memoryId": "",
+                      "pollTimeUtc": "",
+                      "timeFromLastPollSeconds": "",
+                      "size": "",
+                      "minUsed": "",
+                      "maxUsed": "",
+                      "avgUsed": "",
+                      "minPercent": "",
+                      "maxPercent": "",
+                      "avgPercent": "",
+                      "series": [
+                          {
+                              "pollTimeUtc": "",
+                              "avgPercent": "",
+                              "minPercent": "",
+                              "maxPercent": ""
+                          }
+                      ],
+                      "id": ""
+                  }
+              ]
+          }
+        },
+        {
+          "condition": "{{report_type === 'Ping Availability Report'}}",
+          "output_schema": {
+              "paging": {
+                  "pageId": "",
+                  "nextPageId": "",
+                  "size": ""
+              },
+              "data": [
+                  {
+                      "deviceName": "",
+                      "interfaceId": "",
+                      "interfaceName": "",
+                      "packetsLost": "",
+                      "packetsSent": "",
+                      "percentAvailable": "",
+                      "percentPacketLoss": "",
+                      "totalTimeMinutes": "",
+                      "timeUnavailableMinutes": "",
+                      "pollTimeUtc": "",
+                      "timeFromLastPollSeconds": "",
+                      "series": [
+                          {
+                              "pollTimeUtc": "",
+                              "percentAvailable": "",
+                              "percentPacketLoss": ""
+                          }
+                      ],
+                      "id": ""
+                  }
+              ]
+          }
+        },
+        {
+          "condition": "{{report_type === 'Ping Response Time Report'}}",
+          "output_schema": {
+              "paging": {
+                  "pageId": "",
+                  "nextPageId": "",
+                  "size": ""
+              },
+              "data": [
+                  {
+                      "deviceName": "",
+                      "interfaceId": "",
+                      "interfaceName": "",
+                      "minMilliSec": "",
+                      "maxMilliSec": "",
+                      "avgMilliSec": "",
+                      "pollTimeUtc": "",
+                      "timeFromLastPollSeconds": "",
+                      "series": [
+                          {
+                              "pollTimeUtc": "",
+                              "avgMilliSec": "",
+                              "minMilliSec": "",
+                              "maxMilliSec": ""
+                          }
+                      ],
+                      "id": ""
+                  }
+              ]
+          }
+        },
+        {
+          "condition": "{{report_type === 'State Change Timeline Report'}}",
+          "output_schema": {
+            "paging": {
+              "pageId": "",
+              "nextPageId": "",
+              "size": ""
+            },
+            "data": [
+              {
+                "deviceName": "",
+                "monitorTypeName": "",
+                "stateName": "",
+                "internalMonitorState": "",
+                "startTimeUtc": "",
+                "endTimeUtc": "",
+                "totalSeconds": "",
+                "result": "",
+                "id": ""
+              }
+            ]
+          }
+        }
+      ],
+      "parameters": [
+        {
+          "title": "Report Type",
+          "name": "report_type",
+          "type": "select",
+          "options": [
+            "CPU Utilization Report",
+            "Disk Utilization Report",
+            "Memory Utilization Report",
+            "Ping Availability Report",
+            "Ping Response Time Report",
+            "State Change Timeline Report"
+          ],
+          "tooltip": "Specify a report type to retrieve for a device from the WhatsUp Gold server.",
+          "description": "Specify a report type to retrieve for a device from the WhatsUp Gold server.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Device ID",
+          "name": "device_id",
+          "type": "integer",
+          "tooltip": "Specify a device ID to retrieve device report from the WhatsUp Gold server.",
+          "description": "Specify a device ID to retrieve device report from the WhatsUp Gold server.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Range",
+          "name": "range",
+          "type": "select",
+          "options": [
+            "today",
+            "lastPolled",
+            "yesterday",
+            "lastWeek",
+            "lastMonth",
+            "lastQuarter",
+            "weekToDate",
+            "monthToDate",
+            "quarterToDate",
+            "lastNSeconds",
+            "lastNMinutes",
+            "lastNHours",
+            "lastNDays",
+            "lastNWeeks",
+            "lastNMonths",
+            "custom"
+          ],
+          "onchange": {
+            "lastNSeconds": [
+              {
+                "title": "Range N",
+                "required": true,
+                "editable": true,
+                "visible": true,
+                "description": "Specify to return data gathered in the last N seconds.",
+                "type": "integer",
+                "name": "rangeN",
+                "tooltip": "Specify to return data gathered in the last N seconds."
+              }
+            ],
+            "lastNMinutes": [
+              {
+                "title": "Range N",
+                "required": true,
+                "editable": true,
+                "visible": true,
+                "description": "Specify to return data gathered in the last N minutes.",
+                "type": "integer",
+                "name": "rangeN",
+                "tooltip": "Specify to return data gathered in the last N minutes."
+              }
+            ],
+            "lastNHours": [
+              {
+                "title": "Range N",
+                "required": true,
+                "editable": true,
+                "visible": true,
+                "description": "Specify to return data gathered in the last N hours.",
+                "type": "integer",
+                "name": "rangeN",
+                "tooltip": "Specify to return data gathered in the last N hours."
+              }
+            ],
+            "lastNDays": [
+              {
+                "title": "Range N",
+                "required": true,
+                "editable": true,
+                "visible": true,
+                "description": "Specify to return data gathered in the last N days.",
+                "type": "integer",
+                "name": "rangeN",
+                "tooltip": "Specify to return data gathered in the last N days."
+              }
+            ],
+            "lastNWeeks": [
+              {
+                "title": "Range N",
+                "required": true,
+                "editable": true,
+                "visible": true,
+                "description": "Specify to return data gathered in the last N weeks.",
+                "type": "integer",
+                "name": "rangeN",
+                "tooltip": "Specify to return data gathered in the last N weeks."
+              }
+            ],
+            "lastNMonths": [
+              {
+                "title": "Range N",
+                "required": true,
+                "editable": true,
+                "visible": true,
+                "description": "Specify to return data gathered in the last N months.",
+                "type": "integer",
+                "name": "rangeN",
+                "tooltip": "Specify to return data gathered in the last N months."
+              }
+            ],
+            "custom": [
+              {
+                "title": "Start",
+                "required": true,
+                "editable": true,
+                "visible": true,
+                "description": "Specify the start date to retrieve the report from WhatsUp Gold.",
+                "type": "datetime",
+                "name": "rangeStartUtc",
+                "tooltip": "Specify the start date to retrieve the report from WhatsUp Gold."
+              },
+              {
+                "title": "End",
+                "required": true,
+                "editable": true,
+                "visible": true,
+                "description": "Specify the end date to retrieve the report from WhatsUp Gold.",
+                "type": "datetime",
+                "name": "rangeEndUtc",
+                "tooltip": "Specify the end date to retrieve the report from WhatsUp Gold."
+              }
+            ]
+          },
+          "tooltip": "Specify a range to filter the report retrieved from WhatsUp Gold.",
+          "description": "Specify a range to filter the report retrieved from WhatsUp Gold.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Limit",
+          "name": "limit",
+          "type": "integer",
+          "tooltip": "The number of result to retrieve.",
+          "description": "Specify the maximum number of records that this operation should return.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Page ID",
+          "name": "pageId",
+          "type": "integer",
+          "tooltip": "Used to get the next set of results. If nextPageId is returned in the previous response, you use the returned nextPageId value to get the next set of records.",
+          "description": "Specify page ID to get the next set of results. If nextPageId is returned in the previous response, you use the returned nextPageId value to get the next set of records.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true
+    }
+  ]
+}
+
