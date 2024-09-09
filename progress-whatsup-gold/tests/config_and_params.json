@@ -1,0 +1,70 @@
+{
+    "config": [
+        {
+            "resource": "",
+            "username": "",
+            "password": "",
+            "verify_ssl": false,
+            "config_id": "",
+            "connector_info": {
+                "connector_name": "progress-whatsup-gold",
+                "connector_version": "1.0.0"
+            }
+        }
+    ],
+    "get_device_attributes": [
+        {
+            "device_id": 3,
+            "names": null,
+            "limit": null,
+            "pageId": null
+        }
+    ],
+    "get_device_groups": [
+        {
+            "device_id": 3,
+            "view": "ID",
+            "limit": null,
+            "pageId": null
+        }
+    ],
+    "get_device_monitors": [
+        {
+            "device_id": 3,
+            "limit": null,
+            "pageId": null
+        }
+    ],
+    "get_device_polling_configuration": [
+        {
+            "device_id": 3
+        }
+    ],
+    "get_device_summary": [
+        {
+            "device_id": 3
+        }
+    ],
+    "get_device_overview": [
+        {
+            "device_id": 3
+        }
+    ],
+    "get_device_report": [
+        {
+            "report_type": "CPU Utilization Report",
+            "device_id": 3,
+            "range": "today",
+            "limit": null,
+            "pageId": null
+        }
+    ],
+    "invalid_params": {
+        "text": "?,>1234567890!@#$%^&*()_+qwertyuioplkjhgfdsazxcvbnm",
+        "password": "*******",
+        "integer": -123,
+        "json": {
+            "key": "value"
+        }
+    }
+}

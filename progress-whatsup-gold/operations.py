@@ -7,9 +7,9 @@ Copyright end
 
 
 import requests
-from connectors.core.connector import get_logger, ConnectorError
-from .whatsup_gold_api_auth import WhatsUpGoldAuth
 from .constants import *
+from .whatsup_gold_api_auth import *
+from connectors.core.connector import get_logger, ConnectorError
 
 logger = get_logger('progress-whatsup-gold')
 
@@ -148,6 +148,13 @@ def get_device_report(config, params):
     return resp
 
 
+def check_health_ex(config, connector_info):
+    try:
+        return check(config, connector_info)
+    except Exception as err:
+        raise ConnectorError(str(err))
+
+
 operations = {
     'get_device_attributes': get_device_attributes,
     'get_device_groups': get_device_groups,
@@ -155,5 +162,6 @@ operations = {
     'get_device_polling_configuration': get_device_polling_configuration,
     'get_device_summary': get_device_summary,
     'get_device_overview': get_device_overview,
-    'get_device_report': get_device_report
+    'get_device_report': get_device_report,
+    'check_health': check_health_ex
 }
