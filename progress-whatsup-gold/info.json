@@ -19,7 +19,6 @@
         "visible": true,
         "type": "text",
         "name": "resource",
-        "placeholder": "https://<your-WhatsUp-Gold-server-host>:9644",
         "tooltip": "The service-based URI to connect and perform automated operations. ",
         "description": "The service-based URI to connect and perform automated operations. "
       },
