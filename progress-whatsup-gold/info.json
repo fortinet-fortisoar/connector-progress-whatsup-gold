@@ -91,7 +91,7 @@
           "name": "names",
           "type": "text",
           "tooltip": "Specify the comma-separated list of attribute names to return. If empty, all attributes will be returned.",
-          "description": "Specify the comma-separated list of attribute names to return. If empty, all attributes will be returned.",
+          "description": "(Optional) Specify the comma-separated list of attribute names to return. If empty, all attributes will be returned.",
           "required": false,
           "editable": true,
           "visible": true
@@ -101,7 +101,7 @@
           "name": "limit",
           "type": "integer",
           "tooltip": "The number of result to retrieve.",
-          "description": "Specify the maximum number of records that this operation should return.",
+          "description": "(Optional) Specify the maximum number of records that this operation should return.",
           "required": false,
           "editable": true,
           "visible": true
@@ -111,7 +111,7 @@
           "name": "pageId",
           "type": "integer",
           "tooltip": "Used to get the next set of results. If nextPageId is returned in the previous response, you use the returned nextPageId value to get the next set of records.",
-          "description": "Specify page ID to get the next set of results. If nextPageId is returned in the previous response, you use the returned nextPageId value to get the next set of records.",
+          "description": "(Optional) Specify page ID to get the next set of results. If nextPageId is returned in the previous response, you use the returned nextPageId value to get the next set of records.",
           "required": false,
           "editable": true,
           "visible": true
@@ -166,8 +166,8 @@
             "Summary",
             "Detail"
           ],
-          "tooltip": "Specify to return a detailed or summarised response. Valid values: \"ID\" \"Summary\"(default) \"Detail\" ",
-          "description": "Specify to return a detailed or summarised response. Valid values: \"ID\" \"Summary\"(default) \"Detail\" ",
+          "tooltip": "Select to return a detailed or summarised response.",
+          "description": "(Optional) Select to return a detailed or summarised response. Valid values: \"ID\" \"Summary\"(default) \"Detail\" ",
           "required": false,
           "editable": true,
           "visible": true
@@ -177,7 +177,7 @@
           "name": "limit",
           "type": "integer",
           "tooltip": "The number of result to retrieve.",
-          "description": "Specify the maximum number of records that this operation should return.",
+          "description": "(Optional) Specify the maximum number of records that this operation should return.",
           "required": false,
           "editable": true,
           "visible": true
@@ -187,7 +187,7 @@
           "name": "pageId",
           "type": "integer",
           "tooltip": "Used to get the next set of results. If nextPageId is returned in the previous response, you use the returned nextPageId value to get the next set of records.",
-          "description": "Specify page ID to get the next set of results. If nextPageId is returned in the previous response, you use the returned nextPageId value to get the next set of records.",
+          "description": "(Optional) Specify page ID to get the next set of results. If nextPageId is returned in the previous response, you use the returned nextPageId value to get the next set of records.",
           "required": false,
           "editable": true,
           "visible": true
@@ -234,7 +234,7 @@
           "name": "limit",
           "type": "integer",
           "tooltip": "The number of result to retrieve.",
-          "description": "Specify the maximum number of records that this operation should return.",
+          "description": "(Optional) Specify the maximum number of records that this operation should return.",
           "required": false,
           "editable": true,
           "visible": true
@@ -244,7 +244,7 @@
           "name": "pageId",
           "type": "integer",
           "tooltip": "Used to get the next set of results. If nextPageId is returned in the previous response, you use the returned nextPageId value to get the next set of records.",
-          "description": "Specify page ID to get the next set of results. If nextPageId is returned in the previous response, you use the returned nextPageId value to get the next set of records.",
+          "description": "(Optional) Specify page ID to get the next set of results. If nextPageId is returned in the previous response, you use the returned nextPageId value to get the next set of records.",
           "required": false,
           "editable": true,
           "visible": true
@@ -614,8 +614,8 @@
             "Ping Response Time Report",
             "State Change Timeline Report"
           ],
-          "tooltip": "Specify a report type to retrieve for a device from the WhatsUp Gold server.",
-          "description": "Specify a report type to retrieve for a device from the WhatsUp Gold server.",
+          "tooltip": "Select a report type to retrieve for a device from the WhatsUp Gold server. Valid values: \"CPU Utilization Report\" \"Disk Utilization Report\" \"Memory Utilization Report\" \"Ping Availability Report\" \"Ping Response Time Report\" \"State Change Timeline Report\"",
+          "description": "Select a report type to retrieve for a device from the WhatsUp Gold server. Valid values: \"CPU Utilization Report\" \"Disk Utilization Report\" \"Memory Utilization Report\" \"Ping Availability Report\" \"Ping Response Time Report\" \"State Change Timeline Report\"",
           "required": true,
           "editable": true,
           "visible": true
@@ -631,101 +631,101 @@
           "visible": true
         },
         {
-          "title": "Range",
+          "title": "Report Duration",
           "name": "range",
           "type": "select",
           "options": [
-            "today",
-            "lastPolled",
-            "yesterday",
-            "lastWeek",
-            "lastMonth",
-            "lastQuarter",
-            "weekToDate",
-            "monthToDate",
-            "quarterToDate",
-            "lastNSeconds",
-            "lastNMinutes",
-            "lastNHours",
-            "lastNDays",
-            "lastNWeeks",
-            "lastNMonths",
-            "custom"
+            "Today",
+            "Last Polled",
+            "Yesterday",
+            "Last Week",
+            "Last Month",
+            "Last Quarter",
+            "Week-to-Date",
+            "Month-to-Date",
+            "Quarter-to-Date",
+            "Last X Seconds",
+            "Last X Minutes",
+            "Last X Hours",
+            "Last X Days",
+            "Last X Weeks",
+            "Last X Months",
+            "Custom Duration"
           ],
           "onchange": {
-            "lastNSeconds": [
+            "Last X Seconds": [
               {
-                "title": "Range N",
+                "title": "Count of Seconds",
                 "required": true,
                 "editable": true,
                 "visible": true,
-                "description": "Specify to return data gathered in the last N seconds.",
+                "description": "Specify to return data gathered in the last x seconds.",
                 "type": "integer",
                 "name": "rangeN",
-                "tooltip": "Specify to return data gathered in the last N seconds."
+                "tooltip": "Specify to return data gathered in the last x seconds."
               }
             ],
-            "lastNMinutes": [
+            "Last X Minutes": [
               {
-                "title": "Range N",
+                "title": "Count of Minutes",
                 "required": true,
                 "editable": true,
                 "visible": true,
-                "description": "Specify to return data gathered in the last N minutes.",
+                "description": "Specify to return data gathered in the last x minutes.",
                 "type": "integer",
                 "name": "rangeN",
-                "tooltip": "Specify to return data gathered in the last N minutes."
+                "tooltip": "Specify to return data gathered in the last x minutes."
               }
             ],
-            "lastNHours": [
+            "Last X Hours": [
               {
-                "title": "Range N",
+                "title": "Count of Hours",
                 "required": true,
                 "editable": true,
                 "visible": true,
-                "description": "Specify to return data gathered in the last N hours.",
+                "description": "Specify to return data gathered in the last x hours.",
                 "type": "integer",
                 "name": "rangeN",
-                "tooltip": "Specify to return data gathered in the last N hours."
+                "tooltip": "Specify to return data gathered in the last x hours."
               }
             ],
-            "lastNDays": [
+            "Last X Days": [
               {
-                "title": "Range N",
+                "title": "Count of Days",
                 "required": true,
                 "editable": true,
                 "visible": true,
-                "description": "Specify to return data gathered in the last N days.",
+                "description": "Specify to return data gathered in the last x days.",
                 "type": "integer",
                 "name": "rangeN",
-                "tooltip": "Specify to return data gathered in the last N days."
+                "tooltip": "Specify to return data gathered in the last x days."
               }
             ],
-            "lastNWeeks": [
+            "Last X Weeks": [
               {
-                "title": "Range N",
+                "title": "Count of Weeks",
                 "required": true,
                 "editable": true,
                 "visible": true,
-                "description": "Specify to return data gathered in the last N weeks.",
+                "description": "Specify to return data gathered in the last x weeks.",
                 "type": "integer",
                 "name": "rangeN",
-                "tooltip": "Specify to return data gathered in the last N weeks."
+                "tooltip": "Specify to return data gathered in the last x weeks."
               }
             ],
-            "lastNMonths": [
+            "Last X Months": [
               {
-                "title": "Range N",
+                "title": "Count of Months",
                 "required": true,
                 "editable": true,
                 "visible": true,
-                "description": "Specify to return data gathered in the last N months.",
+                "description": "Specify to return data gathered in the last x months.",
                 "type": "integer",
                 "name": "rangeN",
-                "tooltip": "Specify to return data gathered in the last N months."
+                "tooltip": "Specify to return data gathered in the last x months."
               }
             ],
-            "custom": [
+            "Custom Duration": [
               {
                 "title": "Start",
                 "required": true,
@@ -748,8 +748,8 @@
               }
             ]
           },
-          "tooltip": "Specify a range to filter the report retrieved from WhatsUp Gold.",
-          "description": "Specify a range to filter the report retrieved from WhatsUp Gold.",
+          "tooltip": "Select a range to filter the report retrieved from WhatsUp Gold.",
+          "description": "(Optional) Select a range to filter the report retrieved from WhatsUp Gold. Valid values: \"Today\", \"Last Polled\", \"Yesterday\", \"Last Week\", \"Last Month\", \"Last Quarter\", \"Week-to-Date\", \"Month-to-Date\", \"Quarter-to-Date\", \"Last X Seconds\", \"Last X Minutes\", \"Last X Hours\", \"Last X Days\", \"Last X Weeks\", \"Last X Months\", \"Custom Duration\" ",
           "required": false,
           "editable": true,
           "visible": true
@@ -759,7 +759,7 @@
           "name": "limit",
           "type": "integer",
           "tooltip": "The number of result to retrieve.",
-          "description": "Specify the maximum number of records that this operation should return.",
+          "description": "(Optional) Specify the maximum number of records that this operation should return.",
           "required": false,
           "editable": true,
           "visible": true
@@ -769,7 +769,7 @@
           "name": "pageId",
           "type": "integer",
           "tooltip": "Used to get the next set of results. If nextPageId is returned in the previous response, you use the returned nextPageId value to get the next set of records.",
-          "description": "Specify page ID to get the next set of results. If nextPageId is returned in the previous response, you use the returned nextPageId value to get the next set of records.",
+          "description": "(Optional) Specify page ID to get the next set of results. If nextPageId is returned in the previous response, you use the returned nextPageId value to get the next set of records.",
           "required": false,
           "editable": true,
           "visible": true

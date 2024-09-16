@@ -13,3 +13,22 @@ endpoints = {
     "Ping Response Time Report": 'ping-response-time',
     "State Change Timeline Report": 'state-change'
 }
+
+report_duration = {
+    "Today": "today",
+    "Last Polled": "lastPolled",
+    "Yesterday": "yesterday",
+    "Last Week": "lastWeek",
+    "Last Month": "lastMonth",
+    "Last Quarter": "lastQuarter",
+    "Week-to-Date": "weekToDate",
+    "Month-to-Date": "monthToDate",
+    "Quarter-to-Date": "quarterToDate",
+    "Last X Seconds": "lastNSeconds",
+    "Last X Minutes": "lastNMinutes",
+    "Last X Hours": "lastNHours",
+    "Last X Days": "lastNDays",
+    "Last X Weeks": "lastNWeeks",
+    "Last X Months": "lastNMonths",
+    "Custom Duration": "custom"
+}

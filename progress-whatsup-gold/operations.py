@@ -142,6 +142,8 @@ def get_device_overview(config, params):
 def get_device_report(config, params):
     wg = ProgressWhatsUpGold(config)
     params = build_params(params)
+    if params.get('range'):
+        params['range'] = report_duration.get(params.get('range'))
     device_id = params.pop('device_id')
     endpoint = f"devices/{device_id}/reports/{endpoints.get(params.pop('report_type'))}"
     resp = wg.make_rest_call(config, endpoint=endpoint, params=params)
