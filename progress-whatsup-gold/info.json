@@ -9,7 +9,7 @@
   "category": "Network Security",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
-  "help_online": "",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.0/progress-whatsup-gold/956/progress-whatsup-gold-v1-0-0",
   "configuration": {
     "fields": [
       {
@@ -50,7 +50,7 @@
         "type": "checkbox",
         "name": "verify_ssl",
         "value": true,
-        "description": "Specifies whether the SSL certificate for the server is to be verified or not.\nBy default, this option is set as True."
+        "description": "Specifies whether the SSL certificate for the server is to be verified.\nBy default, this option is selected, i.e., set to true."
       }
     ]
   },
@@ -58,7 +58,7 @@
     {
       "operation": "get_device_attributes",
       "title": "Get Device Attributes",
-      "description": "Retrieves a list of all attributes for device from WhatsUp Gold based on the device ID you have specified.",
+      "description": "Retrieves a list of all attributes for a device from WhatsUp Gold based on the device ID, attribute names, and other input parameters that you have specified. ",
       "category": "investigation",
       "annotation": "get_device_attributes",
       "output_schema": {
@@ -91,7 +91,7 @@
           "name": "names",
           "type": "text",
           "tooltip": "Specify the comma-separated list of attribute names to return. If empty, all attributes will be returned.",
-          "description": "(Optional) Specify the comma-separated list of attribute names to return. If empty, all attributes will be returned.",
+          "description": "(Optional) Specify a comma-separated list of attribute names to return. Leave empty to retrieve all attributes. ",
           "required": false,
           "editable": true,
           "visible": true
@@ -111,7 +111,7 @@
           "name": "pageId",
           "type": "integer",
           "tooltip": "Used to get the next set of results. If nextPageId is returned in the previous response, you use the returned nextPageId value to get the next set of records.",
-          "description": "(Optional) Specify page ID to get the next set of results. If nextPageId is returned in the previous response, you use the returned nextPageId value to get the next set of records.",
+          "description": "(Optional) Specify a page token if a previous operation returned a partial result. If the previous response contains a nextPageId element, its value includes a nextPageId to use as a starting point for subsequent calls. ",
           "required": false,
           "editable": true,
           "visible": true
@@ -122,7 +122,7 @@
     {
       "operation": "get_device_groups",
       "title": "Get Device Groups",
-      "description": "Retrieves a list of all device group assignments for a device from WhatsUp Gold based on the device ID you have specified.",
+      "description": "Retrieves a list of all device group assignments for a device from WhatsUp Gold based on the device ID, response type, and other input parameters that you have specified. ",
       "category": "investigation",
       "annotation": "get_device_groups",
       "output_schema": {
@@ -167,7 +167,7 @@
             "Detail"
           ],
           "tooltip": "Select to return a detailed or summarised response.",
-          "description": "(Optional) Select to return a detailed or summarised response. Valid values: \"ID\" \"Summary\"(default) \"Detail\" ",
+          "description": "(Optional) Specify whether to return a detailed or a summarized response. Valid values: \"ID\" \"Summary\"(default) \"Detail\" ",
           "required": false,
           "editable": true,
           "visible": true
@@ -187,7 +187,7 @@
           "name": "pageId",
           "type": "integer",
           "tooltip": "Used to get the next set of results. If nextPageId is returned in the previous response, you use the returned nextPageId value to get the next set of records.",
-          "description": "(Optional) Specify page ID to get the next set of results. If nextPageId is returned in the previous response, you use the returned nextPageId value to get the next set of records.",
+          "description": "(Optional) Specify a page token if a previous operation returned a partial result. If the previous response contains a nextPageId element, its value includes a nextPageId to use as a starting point for subsequent calls. ",
           "required": false,
           "editable": true,
           "visible": true
@@ -198,7 +198,7 @@
     {
       "operation": "get_device_monitors",
       "title": "Get Device Monitors",
-      "description": "Retrieves a list of all assigned monitors for a device from WhatsUp Gold based on the device ID you have specified.",
+      "description": "Retrieves a list of all assigned monitors for a device from WhatsUp Gold based on the device ID, pagination limit, and other input parameters that you have specified. ",
       "category": "investigation",
       "annotation": "get_device_monitors",
       "output_schema": {
@@ -244,7 +244,7 @@
           "name": "pageId",
           "type": "integer",
           "tooltip": "Used to get the next set of results. If nextPageId is returned in the previous response, you use the returned nextPageId value to get the next set of records.",
-          "description": "(Optional) Specify page ID to get the next set of results. If nextPageId is returned in the previous response, you use the returned nextPageId value to get the next set of records.",
+          "description": "(Optional) Specify a page token if a previous operation returned a partial result. If the previous response contains a nextPageId element, its value includes a nextPageId to use as a starting point for subsequent calls. ",
           "required": false,
           "editable": true,
           "visible": true
@@ -255,7 +255,7 @@
     {
       "operation": "get_device_polling_configuration",
       "title": "Get Device Polling Configuration",
-      "description": "Retrieves the device general polling configuration summary from WhatsUp Gold based on the device ID you have specified.",
+      "description": "Retrieves the device general polling configuration summary from WhatsUp Gold based on the device ID you have specified. ",
       "category": "investigation",
       "annotation": "get_device_polling_configuration",
       "output_schema": {
@@ -287,7 +287,7 @@
     {
       "operation": "get_device_summary",
       "title": "Get Device Summary",
-      "description": "Retrieves the summary of the device's configuration settings including references to credentials, monitors, groups, etc. from WhatsUp Gold based on the device ID you have specified.",
+      "description": "Retrieves the summary of the device's configuration settings including references to credentials, monitors, groups, etc. from WhatsUp Gold based on the device ID you have specified. ",
       "category": "investigation",
       "annotation": "get_device_summary",
       "output_schema": {
@@ -369,7 +369,7 @@
     {
       "operation": "get_device_overview",
       "title": "Get Device Overview",
-      "description": "Retrieves the device overview from WhatsUp Gold based on the device ID you have specified.",
+      "description": "Retrieves the device overview from WhatsUp Gold based on the device ID you have specified. ",
       "category": "investigation",
       "annotation": "get_device_overview",
       "output_schema": {
@@ -407,7 +407,7 @@
     {
       "operation": "get_device_report",
       "title": "Get Device Report",
-      "description": "Retrieves the report for a device from WhatsUp Gold based on the report type and device ID you have specified.",
+      "description": "Retrieves a report for the device from WhatsUp Gold based on the report type and device ID, and other input parameters that you have specified. ",
       "category": "investigation",
       "annotation": "get_device_report",
       "conditional_output_schema": [
@@ -614,8 +614,8 @@
             "Ping Response Time Report",
             "State Change Timeline Report"
           ],
-          "tooltip": "Select a report type to retrieve for a device from the WhatsUp Gold server. Valid values: \"CPU Utilization Report\" \"Disk Utilization Report\" \"Memory Utilization Report\" \"Ping Availability Report\" \"Ping Response Time Report\" \"State Change Timeline Report\"",
-          "description": "Select a report type to retrieve for a device from the WhatsUp Gold server. Valid values: \"CPU Utilization Report\" \"Disk Utilization Report\" \"Memory Utilization Report\" \"Ping Availability Report\" \"Ping Response Time Report\" \"State Change Timeline Report\"",
+          "tooltip": "Select a report type to retrieve for a device from the WhatsUp Gold server.",
+          "description": "Select a report type to retrieve for a device from the WhatsUp Gold server. You can choose from following options: \"CPU Utilization Report\" \"Disk Utilization Report\" \"Memory Utilization Report\" \"Ping Availability Report\" \"Ping Response Time Report\" \"State Change Timeline Report\"",
           "required": true,
           "editable": true,
           "visible": true
@@ -659,7 +659,7 @@
                 "required": true,
                 "editable": true,
                 "visible": true,
-                "description": "Specify to return data gathered in the last x seconds.",
+                "description": "Specify the number of seconds prior to the current time to retrieve data for that period.",
                 "type": "integer",
                 "name": "rangeN",
                 "tooltip": "Specify to return data gathered in the last x seconds."
@@ -671,7 +671,7 @@
                 "required": true,
                 "editable": true,
                 "visible": true,
-                "description": "Specify to return data gathered in the last x minutes.",
+                "description": "Specify the number of minutes prior to the current time to retrieve data for that period.",
                 "type": "integer",
                 "name": "rangeN",
                 "tooltip": "Specify to return data gathered in the last x minutes."
@@ -683,7 +683,7 @@
                 "required": true,
                 "editable": true,
                 "visible": true,
-                "description": "Specify to return data gathered in the last x hours.",
+                "description": "Specify the number of hours prior to the current time to retrieve data for that period.",
                 "type": "integer",
                 "name": "rangeN",
                 "tooltip": "Specify to return data gathered in the last x hours."
@@ -695,7 +695,7 @@
                 "required": true,
                 "editable": true,
                 "visible": true,
-                "description": "Specify to return data gathered in the last x days.",
+                "description": "Specify the number of days prior to the current time to retrieve data for that period.",
                 "type": "integer",
                 "name": "rangeN",
                 "tooltip": "Specify to return data gathered in the last x days."
@@ -707,7 +707,7 @@
                 "required": true,
                 "editable": true,
                 "visible": true,
-                "description": "Specify to return data gathered in the last x weeks.",
+                "description": "Specify the number of weeks prior to the current time to retrieve data for that period.",
                 "type": "integer",
                 "name": "rangeN",
                 "tooltip": "Specify to return data gathered in the last x weeks."
@@ -719,7 +719,7 @@
                 "required": true,
                 "editable": true,
                 "visible": true,
-                "description": "Specify to return data gathered in the last x months.",
+                "description": "Specify the number of months prior to the current time to retrieve data for that period.",
                 "type": "integer",
                 "name": "rangeN",
                 "tooltip": "Specify to return data gathered in the last x months."
@@ -731,7 +731,7 @@
                 "required": true,
                 "editable": true,
                 "visible": true,
-                "description": "Specify the start date to retrieve the report from WhatsUp Gold.",
+                "description": "Specify the start date and time of the duration for which to retrieve data. ",
                 "type": "datetime",
                 "name": "rangeStartUtc",
                 "tooltip": "Specify the start date to retrieve the report from WhatsUp Gold."
@@ -741,7 +741,7 @@
                 "required": true,
                 "editable": true,
                 "visible": true,
-                "description": "Specify the end date to retrieve the report from WhatsUp Gold.",
+                "description": "Specify the end date and time of the duration for which to retrieve data. ",
                 "type": "datetime",
                 "name": "rangeEndUtc",
                 "tooltip": "Specify the end date to retrieve the report from WhatsUp Gold."
@@ -749,7 +749,7 @@
             ]
           },
           "tooltip": "Select a range to filter the report retrieved from WhatsUp Gold.",
-          "description": "(Optional) Select a range to filter the report retrieved from WhatsUp Gold. Valid values: \"Today\", \"Last Polled\", \"Yesterday\", \"Last Week\", \"Last Month\", \"Last Quarter\", \"Week-to-Date\", \"Month-to-Date\", \"Quarter-to-Date\", \"Last X Seconds\", \"Last X Minutes\", \"Last X Hours\", \"Last X Days\", \"Last X Weeks\", \"Last X Months\", \"Custom Duration\" ",
+          "description": "(Optional) Select a range to filter the report retrieved from Progress WhatsUp Gold. You can choose from the following options: \"Today\", \"Last Polled\", \"Yesterday\", \"Last Week\", \"Last Month\", \"Last Quarter\", \"Week-to-Date\", \"Month-to-Date\", \"Quarter-to-Date\", \"Last X Seconds\", \"Last X Minutes\", \"Last X Hours\", \"Last X Days\", \"Last X Weeks\", \"Last X Months\", \"Custom Duration\" ",
           "required": false,
           "editable": true,
           "visible": true
@@ -769,7 +769,7 @@
           "name": "pageId",
           "type": "integer",
           "tooltip": "Used to get the next set of results. If nextPageId is returned in the previous response, you use the returned nextPageId value to get the next set of records.",
-          "description": "(Optional) Specify page ID to get the next set of results. If nextPageId is returned in the previous response, you use the returned nextPageId value to get the next set of records.",
+          "description": "(Optional) Specify a page token if a previous operation returned a partial result. If the previous response contains a nextPageId element, its value includes a nextPageId to use as a starting point for subsequent calls. ",
           "required": false,
           "editable": true,
           "visible": true

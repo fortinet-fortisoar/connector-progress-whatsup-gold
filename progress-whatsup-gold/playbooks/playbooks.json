@@ -18,7 +18,7 @@
           "uuid": "b555cafa-34dc-41c0-b7d8-3811b13bc3ea",
           "collection": "/api/3/workflow_collections/47c5c994-7046-49b6-a896-fce737afc805",
           "triggerLimit": null,
-          "description": "Retrieves a list of all attributes for device from WhatsUp Gold based on the device ID you have specified.",
+          "description": "Retrieves a list of all attributes for a device from WhatsUp Gold based on the device ID, attribute names, and other input parameters that you have specified. ",
           "name": "Get Device Attributes",
           "tag": "#Progress WhatsUp Gold",
           "recordTags": [
@@ -95,7 +95,7 @@
           "uuid": "3b64a409-d819-4e96-b257-d971a5071eec",
           "collection": "/api/3/workflow_collections/47c5c994-7046-49b6-a896-fce737afc805",
           "triggerLimit": null,
-          "description": "Retrieves a list of all device group assignments for a device from WhatsUp Gold based on the device ID you have specified.",
+          "description": "Retrieves a list of all device group assignments for a device from WhatsUp Gold based on the device ID, response type, and other input parameters that you have specified. ",
           "name": "Get Device Groups",
           "tag": "#Progress WhatsUp Gold",
           "recordTags": [
@@ -172,7 +172,7 @@
           "uuid": "55f1714f-843d-47eb-80ce-58f3b7a9ed90",
           "collection": "/api/3/workflow_collections/47c5c994-7046-49b6-a896-fce737afc805",
           "triggerLimit": null,
-          "description": "Retrieves a list of all assigned monitors for a device from WhatsUp Gold based on the device ID you have specified.",
+          "description": "Retrieves a list of all assigned monitors for a device from WhatsUp Gold based on the device ID, pagination limit, and other input parameters that you have specified. ",
           "name": "Get Device Monitors",
           "tag": "#Progress WhatsUp Gold",
           "recordTags": [
@@ -249,7 +249,7 @@
           "uuid": "b605600b-d5d1-417a-b949-b2a544d05309",
           "collection": "/api/3/workflow_collections/47c5c994-7046-49b6-a896-fce737afc805",
           "triggerLimit": null,
-          "description": "Retrieves the device general polling configuration summary from WhatsUp Gold based on the device ID you have specified.",
+          "description": "Retrieves the device general polling configuration summary from WhatsUp Gold based on the device ID you have specified. ",
           "name": "Get Device Polling Configuration",
           "tag": "#Progress WhatsUp Gold",
           "recordTags": [
@@ -326,7 +326,7 @@
           "uuid": "e9d1f064-0962-4826-bda7-66f6779ce516",
           "collection": "/api/3/workflow_collections/47c5c994-7046-49b6-a896-fce737afc805",
           "triggerLimit": null,
-          "description": "Retrieves the summary of the device's configuration settings including references to credentials, monitors, groups, etc. from WhatsUp Gold based on the device ID you have specified.",
+          "description": "Retrieves the summary of the device's configuration settings including references to credentials, monitors, groups, etc. from WhatsUp Gold based on the device ID you have specified. ",
           "name": "Get Device Summary",
           "tag": "#Progress WhatsUp Gold",
           "recordTags": [
@@ -403,7 +403,7 @@
           "uuid": "ca682694-3273-44d3-ba54-7de3004abe3e",
           "collection": "/api/3/workflow_collections/47c5c994-7046-49b6-a896-fce737afc805",
           "triggerLimit": null,
-          "description": "Retrieves the device overview from WhatsUp Gold based on the device ID you have specified.",
+          "description": "Retrieves the device overview from WhatsUp Gold based on the device ID you have specified. ",
           "name": "Get Device Overview",
           "tag": "#Progress WhatsUp Gold",
           "recordTags": [
@@ -480,7 +480,7 @@
           "uuid": "f2469a9b-42ba-45bf-b36a-f4df02566e85",
           "collection": "/api/3/workflow_collections/47c5c994-7046-49b6-a896-fce737afc805",
           "triggerLimit": null,
-          "description": "Retrieves the report for a device from WhatsUp Gold based on the report type and device ID you have specified.",
+          "description": "Retrieves a report for the device from WhatsUp Gold based on the report type and device ID, and other input parameters that you have specified. ",
           "name": "Get Device Report",
           "tag": "#Progress WhatsUp Gold",
           "recordTags": [
